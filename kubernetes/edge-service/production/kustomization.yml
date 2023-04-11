@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - github.com/avollmaier/hypercrawler/tree/main/edge-service/k8s
+
+patchesStrategicMerge:
+  - patch-env.yml
+  - patch-resources.yml
+
+images:
+  - name: edge-service
+    newName: ghcr.io/avollmaier/hypercrawler/edge-service
+    newTag: latest
+
+replicas:
+  - count: 1
+    name: edge-service

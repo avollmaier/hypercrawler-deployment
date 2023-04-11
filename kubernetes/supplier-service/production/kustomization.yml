@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - github.com/avollmaier/hypercrawler/tree/main/supplier-service/k8s
+
+patchesStrategicMerge:
+  - patch-env.yml
+  - patch-resources.yml
+
+images:
+  - name: supplier-service
+    newName: ghcr.io/avollmaier/hypercrawler/supplier-service
+    newTag: latest
+
+replicas:
+  - count: 1
+    name: supplier-service
