@@ -22,6 +22,9 @@ jobs:
           cd kubernetes/applications/${{ env.APP_NAME }}/production
           kustomize edit set image ${{ env.APP_NAME }}=${{ env.APP_IMAGE }}:${{ env.APP_VERSION }}
           sed -i 's/ref=[\w+]/${{ env.APP_VERSION }}/' kustomization.yml
+      - name: Update project
+        run: |
+          git pull
       - name: Commit updated manifests
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
