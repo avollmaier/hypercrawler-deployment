@@ -11,7 +11,7 @@ patchesStrategicMerge:
 images:
 - name: hypercrawler-supplier-service
   newName: ghcr.io/avollmaier/hypercrawler-supplier-service
-  newTag: 714157a777cf3143b2e615ef45ef8ca35866f03d
+  newTag: 405529669af2cdd9442b72a0be8fbfba3a74d027
 
 replicas:
 - count: 1
