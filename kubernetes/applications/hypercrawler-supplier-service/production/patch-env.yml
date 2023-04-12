@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: edge-service
+  name: hypercrawler-supplier-service
 spec:
   template:
     spec:
       containers:
-        - name: edge-service
+        - name: hypercrawler-supplier-service
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "100"
             - name: SPRING_PROFILES_ACTIVE
               value: prod
             - name: DISCOVERY_SERVICE_URL
-              value: http://discovery-service:8090/eureka/
+              value: http://hypercrawler-discovery-service:9000/eureka/

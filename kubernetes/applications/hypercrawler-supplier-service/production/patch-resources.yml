@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: supplier-service
+  name: hypercrawler-supplier-service
 spec:
   template:
     spec:
       containers:
-        - name: supplier-service
+        - name: hypercrawler-supplier-service
           resources:
             requests:
               memory: 756Mi
