@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hypercrawler-config
+  labels:
+    db: hypercrawler-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hypercrawler-mongo
+  labels:
+    db: hypercrawler-mongo
+spec:
+  selector:
+    matchLabels:
+      db: hypercrawler-mongo
+  template:
+    metadata:
+      labels:
+        db: hypercrawler-mongo
+    spec:
+      containers:
+        - name: hypercrawler-mongo
+          image: mongo:latest
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: admin
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: admin
+            - name: MONGO_INITDB_DATABASE
+              value: admin
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hypercrawler-mongo
+  labels:
+    db: hypercrawler-mongo
+spec:
+  type: ClusterIP
+  selector:
+    db: hypercrawler-mongo
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
