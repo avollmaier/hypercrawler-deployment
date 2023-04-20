@@ -1,5 +1,5 @@
 include('../../../../hypercrawler-discovery-service/Tiltfile')
 include('../../../../hypercrawler-config-service/Tiltfile')
 include('../../../../hypercrawler-edge-service/Tiltfile')
-include('../../../../hypercrawler-supplier-service/Tiltfile')
+include('../../../../hypercrawler-manager-service/Tiltfile')
 # update_settings(max_parallel_updates=1)

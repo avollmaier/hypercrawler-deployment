@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hypercrawler-supplier-service
+  name: hypercrawler-manager-service
 spec:
   template:
     spec:
       containers:
-        - name: hypercrawler-supplier-service
+        - name: hypercrawler-manager-service
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "100"
