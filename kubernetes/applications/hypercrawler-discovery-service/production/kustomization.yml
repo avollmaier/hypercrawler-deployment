@@ -11,7 +11,7 @@ patchesStrategicMerge:
 images:
 - name: hypercrawler-discovery-service
   newName: ghcr.io/avollmaier/hypercrawler-discovery-service
-  newTag: b451e0fe428904c485b7976a1c2bf713f15aea3f
+  newTag: 01913e13140ae1b3e220e9f6cdd30f7775057a19
 
 replicas:
 - count: 1
