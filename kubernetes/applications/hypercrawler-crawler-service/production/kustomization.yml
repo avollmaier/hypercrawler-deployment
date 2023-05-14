@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - github.com/avollmaier/hypercrawler-crawler-service
+
+patchesStrategicMerge:
+  - patch-env.yml
+  - patch-resources.yml
+
+images:
+  - name: hypercrawler-crawler-service
+    newName: ghcr.io/avollmaier/hypercrawler-crawler-service
+    newTag: 6a82f9d764f696f8f89de3590cbd5f450b976fb7
+
+replicas:
+  - count: 1
+    name: hypercrawler-crawler-service

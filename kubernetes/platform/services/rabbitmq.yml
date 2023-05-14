@@ -9,6 +9,8 @@ data:
     default_user = admin
     default_pass = admin
     vm_memory_high_watermark.relative = 1.0
+  enabled_plugins: |-
+    [rabbitmq_management,rabbitmq_prometheus,rabbitmq_tracing].
 
 ---
 
@@ -29,14 +31,12 @@ spec:
     spec:
       containers:
         - name: hypercrawler-rabbitmq
-          image: rabbitmq:3.10-management
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits:
-              cpu: 200m
-              memory: 150Mi
+          image: rabbitmq:3.11-management
+          ports:
+            - containerPort: 5672
+              name: amqp
+            - containerPort: 15672
+              name: management
           volumeMounts:
             - mountPath: /etc/rabbitmq
               name: rabbitmq-config-volume
@@ -54,7 +54,7 @@ metadata:
   labels:
     db: hypercrawler-rabbitmq
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     db: hypercrawler-rabbitmq
   ports:
