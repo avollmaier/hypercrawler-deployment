@@ -11,7 +11,7 @@ patchesStrategicMerge:
 images:
 - name: hypercrawler-edge-service
   newName: ghcr.io/avollmaier/hypercrawler-edge-service
-  newTag: cc0a2a9cb423c8282122f3a250ac6160c3a1fdcf
+  newTag: aff3a85849ea4709f2e382183fbd21afe924afb2
 
 replicas:
 - count: 1
