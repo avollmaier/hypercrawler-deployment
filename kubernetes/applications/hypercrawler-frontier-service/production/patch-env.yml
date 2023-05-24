@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hypercrawler-prioritizer-service
+  name: hypercrawler-frontier-service
 spec:
   template:
     spec:
       containers:
-        - name: hypercrawler-prioritizer-service
+        - name: hypercrawler-frontier-service
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "100"

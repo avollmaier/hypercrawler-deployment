@@ -2,17 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- github.com/avollmaier/hypercrawler-prioritizer-service
+- github.com/avollmaier/hypercrawler-frontier-service
 
 patchesStrategicMerge:
 - patch-env.yml
 - patch-resources.yml
 
 images:
-- name: hypercrawler-prioritizer-service
-  newName: ghcr.io/avollmaier/hypercrawler-prioritizer-service
+- name: hypercrawler-frontier-service
+  newName: ghcr.io/avollmaier/hypercrawler-frontier-service
   newTag: 6a82f9d764f696f8f89de3590cbd5f450b976fb7
 
 replicas:
 - count: 1
-  name: hypercrawler-prioritizer-service
+  name: hypercrawler-frontier-service
