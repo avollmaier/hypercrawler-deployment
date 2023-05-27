@@ -12,5 +12,3 @@ spec:
               value: "100"
             - name: SPRING_PROFILES_ACTIVE
               value: prod
-            - name: DISCOVERY_SERVICE_URL
-              value: http://hypercrawler-discovery-service:9000/eureka/

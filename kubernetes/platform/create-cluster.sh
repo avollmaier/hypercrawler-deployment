@@ -21,7 +21,22 @@ echo "\n⌛ Waiting for MongoDB to be ready..."
 kubectl wait \
   --for=condition=ready pod \
   --selector=db=hypercrawler-mongo \
-  --timeout=180s
+  --timeout=360s
+
+sleep 5
+
+echo "\n⌛ Waiting for Neo4j to be deployed..."
+
+while [ $(kubectl get pod -l db=hypercrawler-neo4j | wc -l) -eq 0 ] ; do
+  sleep 5
+done
+
+echo "\n⌛ Waiting for Neo4j to be ready..."
+
+kubectl wait \
+  --for=condition=ready pod \
+  --selector=db=hypercrawler-neo4j \
+  --timeout=360s
 
 echo "\n📦 Deploying RabbitMQ..."
 

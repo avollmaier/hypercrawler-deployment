@@ -1,4 +1,3 @@
-include('../../../../hypercrawler-discovery-service/Tiltfile')
 include('../../../../hypercrawler-config-service/Tiltfile')
 include('../../../../hypercrawler-edge-service/Tiltfile')
 include('../../../../hypercrawler-manager-service/Tiltfile')
