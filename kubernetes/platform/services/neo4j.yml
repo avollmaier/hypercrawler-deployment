@@ -25,6 +25,9 @@ spec:
       containers:
         - name: hypercrawler-neo4j
           image: neo4j:latest
+          env:
+            - name: NEO4J_AUTH
+              value: neo4j/password
 
 ---
 
