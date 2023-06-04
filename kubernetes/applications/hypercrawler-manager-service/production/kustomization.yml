@@ -11,7 +11,7 @@ patchesStrategicMerge:
 images:
 - name: hypercrawler-manager-service
   newName: ghcr.io/avollmaier/hypercrawler-manager-service
-  newTag: e93677accbe7c194655bcc3fac8c36e77dbd268b
+  newTag: 76d2d03df08344792235b4226da037c41a52bbca
 
 replicas:
 - count: 1
