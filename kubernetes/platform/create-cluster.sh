@@ -2,7 +2,7 @@
 
 echo "\n📦 Initializing Kubernetes cluster...\n"
 
-ctlptl create cluster minikube --registry=ctlptl-registry --kubernetes-version=v1.28.1
+ctlptl create cluster minikube --registry=ctlptl-registry --kubernetes-version=v1.28.1 --min-cpus=8
 
 echo "\n📦 Deploying platform services..."
 
