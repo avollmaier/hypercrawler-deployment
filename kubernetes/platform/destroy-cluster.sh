@@ -2,8 +2,8 @@
 
 echo "\n🏴️ Destroying Kubernetes cluster...\n"
 
-minikube stop
+minikube stop --profile hypercrawler
 
-minikube delete
+minikube delete  --profile hypercrawler
 
 echo "\n🏴️ Cluster destroyed\n"
