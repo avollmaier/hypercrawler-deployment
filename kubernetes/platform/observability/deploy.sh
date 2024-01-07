@@ -58,6 +58,8 @@ kubectl wait \
   --timeout=360s \
   --namespace=observability-stack
 
+kubectl port-forward --namespace observability-stack service/loki-stack-prometheus-server 9090:9090 >/dev/null 2>&1 &
+
 echo "\n⌛ Waiting for Loki to be ready..."
 
 while [ $(kubectl get pod -l app=loki -n observability-stack | wc -l) -eq 0 ] ; do
